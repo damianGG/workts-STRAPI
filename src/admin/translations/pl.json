@@ -1,0 +1,12 @@
+{
+    "app.components.LeftMenu.navbrand.title": "Strapi",
+    "app.components.LeftMenu.navbrand.workplace": "Miejsce pracy",
+    "app.components.HomePage.welcome.again": "Witaj ponownie!",
+    "app.components.HomePage.welcome.subtitle": "Miło Cię znowu widzieć, {{username}}!",
+    "app.components.HomePage.button.blog": "Przejdź do bloga",
+    "app.components.HomePage.welcome.congrats": "Gratulacje!",
+    "app.components.HomePage.welcome.congrats.content": "Pomyślnie ukończyłeś konfigurację swojej aplikacji.",
+    "app.components.HomePage.welcome.congrats.content.bold": "Teraz możesz zacząć budować swoje treści!",
+    "app.components.HomePage.welcome.link": "Dowiedz się więcej na temat Strapi",
+    "app.components.HomePage.welcome.video": "Zobacz wideo"
+}

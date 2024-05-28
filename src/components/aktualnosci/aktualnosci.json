@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_aktualnosci_aktualnoscis",
+  "info": {
+    "displayName": "aktualnosci"
+  },
+  "options": {},
+  "attributes": {
+    "opis": {
+      "type": "blocks"
+    }
+  }
+}

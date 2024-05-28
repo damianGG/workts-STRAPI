@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aktualnoscis",
+  "info": {
+    "singularName": "aktualnosci",
+    "pluralName": "aktualnoscis",
+    "displayName": "Aktualnosci"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tytul": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "opis": {
+      "type": "blocks",
+      "required": true
+    },
+    "podtytul": {
+      "type": "text"
+    }
+  }
+}

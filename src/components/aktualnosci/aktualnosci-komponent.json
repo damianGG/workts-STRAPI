@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_aktualnosci_aktualnosci_komponents",
+  "info": {
+    "displayName": "Aktualnosci_komponent"
+  },
+  "options": {},
+  "attributes": {
+    "tytul": {
+      "type": "text"
+    },
+    "data": {
+      "type": "date"
+    },
+    "opis": {
+      "type": "blocks"
+    }
+  }
+}
