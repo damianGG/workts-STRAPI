@@ -410,6 +410,7 @@ export interface ApiDokumentyDokumenty extends Schema.CollectionType {
     tytul: Attribute.String;
     kolorowy: Attribute.Media;
     czarnobialy: Attribute.Media;
+    rank: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

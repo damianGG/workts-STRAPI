@@ -7,6 +7,9 @@ module.exports = ({ env }) => ({
                 "app.components.HomePage.welcome.again": "Bienvenue ",
             },
         },
+        'drag-drop-content-types': {
+            enabled: true
+        }
     },
     // Dodaj inne konfiguracje pluginów tutaj
 });
