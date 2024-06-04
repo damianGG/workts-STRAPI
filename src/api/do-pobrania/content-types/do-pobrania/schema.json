@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "do_pobranias",
+  "info": {
+    "singularName": "do-pobrania",
+    "pluralName": "do-pobranias",
+    "displayName": "doPobrania"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Tekst": {
+      "type": "string"
+    },
+    "Plik": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

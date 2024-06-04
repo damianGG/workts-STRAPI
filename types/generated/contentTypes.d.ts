@@ -368,6 +368,7 @@ export interface ApiAktualnosciAktualnosci extends Schema.CollectionType {
     singularName: 'aktualnosci';
     pluralName: 'aktualnoscis';
     displayName: 'Aktualnosci';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -377,6 +378,9 @@ export interface ApiAktualnosciAktualnosci extends Schema.CollectionType {
     data: Attribute.Date & Attribute.Required;
     opis: Attribute.Blocks & Attribute.Required;
     podtytul: Attribute.Text;
+    zdjecie: Attribute.Media;
+    TekstPlikDoPobrania: Attribute.String;
+    PlikDoPobrania: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -388,6 +392,37 @@ export interface ApiAktualnosciAktualnosci extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::aktualnosci.aktualnosci',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDoPobraniaDoPobrania extends Schema.SingleType {
+  collectionName: 'do_pobranias';
+  info: {
+    singularName: 'do-pobrania';
+    pluralName: 'do-pobranias';
+    displayName: 'doPobrania';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Tekst: Attribute.String;
+    Plik: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::do-pobrania.do-pobrania',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::do-pobrania.do-pobrania',
       'oneToOne',
       'admin::user'
     > &
@@ -866,6 +901,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::aktualnosci.aktualnosci': ApiAktualnosciAktualnosci;
+      'api::do-pobrania.do-pobrania': ApiDoPobraniaDoPobrania;
       'api::dokumenty.dokumenty': ApiDokumentyDokumenty;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

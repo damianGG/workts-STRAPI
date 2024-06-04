@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_aktualnosci_do_pobranias",
+  "info": {
+    "displayName": "DoPobrania",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Tekst": {
+      "type": "string"
+    },
+    "Plik": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Plik2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
