@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aktualnoscis_workts",
+  "info": {
+    "singularName": "aktualnosci-workts",
+    "pluralName": "aktualnoscis-workts",
+    "displayName": "Aktualnosci-workts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tytul": {
+      "type": "string"
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "opis": {
+      "type": "blocks",
+      "required": true
+    },
+    "podtytul": {
+      "type": "text"
+    },
+    "zdjecie": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "TesktPlikDoPobrania": {
+      "type": "string"
+    },
+    "PlikDoPobrania": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

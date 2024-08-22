@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "do_pobranias_wortks",
+  "info": {
+    "singularName": "do-pobrania-wortks",
+    "pluralName": "do-pobranias-wortks",
+    "displayName": "DoPobrania-wortks"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Teskt": {
+      "type": "string"
+    },
+    "Plik": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
