@@ -993,6 +993,28 @@ export interface ApiDokumentyWorktsDokumentyWorkts
   };
 }
 
+export interface ApiTestTest extends Schema.CollectionType {
+  collectionName: 'tests';
+  info: {
+    singularName: 'test';
+    pluralName: 'tests';
+    displayName: 'test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    test: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1017,6 +1039,7 @@ declare module '@strapi/types' {
       'api::do-pobrania-wortks.do-pobrania-wortks': ApiDoPobraniaWortksDoPobraniaWortks;
       'api::dokumenty.dokumenty': ApiDokumentyDokumenty;
       'api::dokumenty-workts.dokumenty-workts': ApiDokumentyWorktsDokumentyWorkts;
+      'api::test.test': ApiTestTest;
     }
   }
 }
