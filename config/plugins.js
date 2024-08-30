@@ -9,7 +9,7 @@ module.exports = ({ env }) => ({
         },
         'drag-drop-content-types': {
             enabled: true
-        }
+        },
     },
     upload: {
         config: {
@@ -26,7 +26,5 @@ module.exports = ({ env }) => ({
             },
         },
     },
-    // Dodaj inne konfiguracje pluginów tutaj
 });
 
-//TODO dodaj konfuguracje dla cloduinary w plugins.js

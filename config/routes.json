@@ -1,0 +1,10 @@
+{
+    "method": "GET",
+    "path": "/upload/",
+    "handler": "upload.find",
+    "config": {
+        "policies": [
+            "global::restrict-folders"
+        ]
+    }
+}
