@@ -800,6 +800,43 @@ export interface ApiAktualnosciWorktsAktualnosciWorkts
   };
 }
 
+export interface ApiAktualnosciWracamDoPracyAktualnosciWracamDoPracy
+  extends Schema.CollectionType {
+  collectionName: 'aktualnosci_wracam_do_pracies';
+  info: {
+    singularName: 'aktualnosci-wracam-do-pracy';
+    pluralName: 'aktualnosci-wracam-do-pracies';
+    displayName: 'Aktualnosci-WracamDoPracy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tytul: Attribute.Text & Attribute.Required & Attribute.Unique;
+    data: Attribute.Date & Attribute.Required;
+    opis: Attribute.Blocks & Attribute.Required;
+    podtytul: Attribute.Text;
+    zdjecie: Attribute.Media;
+    PlikDoPobrania: Attribute.Media;
+    TesktPlikDoPobrania: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::aktualnosci-wracam-do-pracy.aktualnosci-wracam-do-pracy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::aktualnosci-wracam-do-pracy.aktualnosci-wracam-do-pracy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDoPobraniaDoPobrania extends Schema.SingleType {
   collectionName: 'do_pobranias';
   info: {
@@ -962,6 +999,40 @@ export interface ApiDokumentyWorktsDokumentyWorkts
   };
 }
 
+export interface ApiDokumentyWracamDoPracyDokumentyWracamDoPracy
+  extends Schema.CollectionType {
+  collectionName: 'dokumenty_wracam_do_pracies';
+  info: {
+    singularName: 'dokumenty-wracam-do-pracy';
+    pluralName: 'dokumenty-wracam-do-pracies';
+    displayName: 'Dokumenty-WracamDoPracy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tytul: Attribute.String;
+    kolorowy: Attribute.Media;
+    czarnobialy: Attribute.Media;
+    rank: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dokumenty-wracam-do-pracy.dokumenty-wracam-do-pracy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dokumenty-wracam-do-pracy.dokumenty-wracam-do-pracy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -980,10 +1051,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::aktualnosci.aktualnosci': ApiAktualnosciAktualnosci;
       'api::aktualnosci-workts.aktualnosci-workts': ApiAktualnosciWorktsAktualnosciWorkts;
+      'api::aktualnosci-wracam-do-pracy.aktualnosci-wracam-do-pracy': ApiAktualnosciWracamDoPracyAktualnosciWracamDoPracy;
       'api::do-pobrania.do-pobrania': ApiDoPobraniaDoPobrania;
       'api::do-pobrania-wortks.do-pobrania-wortks': ApiDoPobraniaWortksDoPobraniaWortks;
       'api::dokumenty.dokumenty': ApiDokumentyDokumenty;
       'api::dokumenty-workts.dokumenty-workts': ApiDokumentyWorktsDokumentyWorkts;
+      'api::dokumenty-wracam-do-pracy.dokumenty-wracam-do-pracy': ApiDokumentyWracamDoPracyDokumentyWracamDoPracy;
     }
   }
 }
