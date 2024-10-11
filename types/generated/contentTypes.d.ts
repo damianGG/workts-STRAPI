@@ -362,6 +362,220 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAktualnosciWorktsAktualnosciWorkts
+  extends Schema.CollectionType {
+  collectionName: 'aktualnoscis_workts';
+  info: {
+    singularName: 'aktualnosci-workts';
+    pluralName: 'aktualnoscis-workts';
+    displayName: 'Integracja Adaptacja Aktualno\u015Bci';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    tytul: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    opis: Attribute.Blocks &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    podtytul: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    zdjecie: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TesktPlikDoPobrania: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    PlikDoPobrania: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::aktualnosci-workts.aktualnosci-workts',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::aktualnosci-workts.aktualnosci-workts',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::aktualnosci-workts.aktualnosci-workts',
+      'oneToMany',
+      'api::aktualnosci-workts.aktualnosci-workts'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDoPobraniaDoPobrania extends Schema.SingleType {
+  collectionName: 'do_pobranias';
+  info: {
+    singularName: 'do-pobrania';
+    pluralName: 'do-pobranias';
+    displayName: 'doPobrania';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Tekst: Attribute.String;
+    Plik: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::do-pobrania.do-pobrania',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::do-pobrania.do-pobrania',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDoPobraniaWortksDoPobraniaWortks extends Schema.SingleType {
+  collectionName: 'do_pobranias_wortks';
+  info: {
+    singularName: 'do-pobrania-wortks';
+    pluralName: 'do-pobranias-wortks';
+    displayName: 'DoPobrania-wortks';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Teskt: Attribute.String;
+    Plik: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::do-pobrania-wortks.do-pobrania-wortks',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::do-pobrania-wortks.do-pobrania-wortks',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDokumentyWorktsDokumentyWorkts
+  extends Schema.CollectionType {
+  collectionName: 'dokumentys_workts';
+  info: {
+    singularName: 'dokumenty-workts';
+    pluralName: 'dokumentys-workts';
+    displayName: 'Integracja Adaptacja Dokumenty';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    tytul: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    kolorowy: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    czarnobialy: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    rank: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dokumenty-workts.dokumenty-workts',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dokumenty-workts.dokumenty-workts',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::dokumenty-workts.dokumenty-workts',
+      'oneToMany',
+      'api::dokumenty-workts.dokumenty-workts'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -677,362 +891,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAktualnosciAktualnosci extends Schema.CollectionType {
-  collectionName: 'aktualnoscis';
-  info: {
-    singularName: 'aktualnosci';
-    pluralName: 'aktualnoscis';
-    displayName: 'Aktualnosci';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    tytul: Attribute.Text & Attribute.Required & Attribute.Unique;
-    data: Attribute.Date & Attribute.Required;
-    opis: Attribute.Blocks & Attribute.Required;
-    podtytul: Attribute.Text;
-    zdjecie: Attribute.Media;
-    TekstPlikDoPobrania: Attribute.String;
-    PlikDoPobrania: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::aktualnosci.aktualnosci',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::aktualnosci.aktualnosci',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiAktualnosciWorktsAktualnosciWorkts
-  extends Schema.CollectionType {
-  collectionName: 'aktualnoscis_workts';
-  info: {
-    singularName: 'aktualnosci-workts';
-    pluralName: 'aktualnoscis-workts';
-    displayName: 'Aktualnosci-workts';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    tytul: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.Date &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    opis: Attribute.Blocks &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    podtytul: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    zdjecie: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    TesktPlikDoPobrania: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    PlikDoPobrania: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::aktualnosci-workts.aktualnosci-workts',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::aktualnosci-workts.aktualnosci-workts',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::aktualnosci-workts.aktualnosci-workts',
-      'oneToMany',
-      'api::aktualnosci-workts.aktualnosci-workts'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiAktualnosciWracamDoPracyAktualnosciWracamDoPracy
-  extends Schema.CollectionType {
-  collectionName: 'aktualnosci_wracam_do_pracies';
-  info: {
-    singularName: 'aktualnosci-wracam-do-pracy';
-    pluralName: 'aktualnosci-wracam-do-pracies';
-    displayName: 'Aktualnosci-WracamDoPracy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    tytul: Attribute.Text & Attribute.Required & Attribute.Unique;
-    data: Attribute.Date & Attribute.Required;
-    opis: Attribute.Blocks & Attribute.Required;
-    podtytul: Attribute.Text;
-    zdjecie: Attribute.Media;
-    PlikDoPobrania: Attribute.Media;
-    TesktPlikDoPobrania: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::aktualnosci-wracam-do-pracy.aktualnosci-wracam-do-pracy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::aktualnosci-wracam-do-pracy.aktualnosci-wracam-do-pracy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDoPobraniaDoPobrania extends Schema.SingleType {
-  collectionName: 'do_pobranias';
-  info: {
-    singularName: 'do-pobrania';
-    pluralName: 'do-pobranias';
-    displayName: 'doPobrania';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Tekst: Attribute.String;
-    Plik: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::do-pobrania.do-pobrania',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::do-pobrania.do-pobrania',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDoPobraniaWortksDoPobraniaWortks extends Schema.SingleType {
-  collectionName: 'do_pobranias_wortks';
-  info: {
-    singularName: 'do-pobrania-wortks';
-    pluralName: 'do-pobranias-wortks';
-    displayName: 'DoPobrania-wortks';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Teskt: Attribute.String;
-    Plik: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::do-pobrania-wortks.do-pobrania-wortks',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::do-pobrania-wortks.do-pobrania-wortks',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDokumentyDokumenty extends Schema.CollectionType {
-  collectionName: 'dokumenties';
-  info: {
-    singularName: 'dokumenty';
-    pluralName: 'dokumenties';
-    displayName: 'Dokumenty';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    tytul: Attribute.String;
-    kolorowy: Attribute.Media;
-    czarnobialy: Attribute.Media;
-    rank: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dokumenty.dokumenty',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dokumenty.dokumenty',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDokumentyWorktsDokumentyWorkts
-  extends Schema.CollectionType {
-  collectionName: 'dokumentys_workts';
-  info: {
-    singularName: 'dokumenty-workts';
-    pluralName: 'dokumentys-workts';
-    displayName: 'Dokumenty-workts';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    tytul: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    kolorowy: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    czarnobialy: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    rank: Attribute.Integer &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dokumenty-workts.dokumenty-workts',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dokumenty-workts.dokumenty-workts',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::dokumenty-workts.dokumenty-workts',
-      'oneToMany',
-      'api::dokumenty-workts.dokumenty-workts'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiDokumentyWracamDoPracyDokumentyWracamDoPracy
-  extends Schema.CollectionType {
-  collectionName: 'dokumenty_wracam_do_pracies';
-  info: {
-    singularName: 'dokumenty-wracam-do-pracy';
-    pluralName: 'dokumenty-wracam-do-pracies';
-    displayName: 'Dokumenty-WracamDoPracy';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    tytul: Attribute.String;
-    kolorowy: Attribute.Media;
-    czarnobialy: Attribute.Media;
-    rank: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dokumenty-wracam-do-pracy.dokumenty-wracam-do-pracy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dokumenty-wracam-do-pracy.dokumenty-wracam-do-pracy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1043,20 +901,16 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::aktualnosci-workts.aktualnosci-workts': ApiAktualnosciWorktsAktualnosciWorkts;
+      'api::do-pobrania.do-pobrania': ApiDoPobraniaDoPobrania;
+      'api::do-pobrania-wortks.do-pobrania-wortks': ApiDoPobraniaWortksDoPobraniaWortks;
+      'api::dokumenty-workts.dokumenty-workts': ApiDokumentyWorktsDokumentyWorkts;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::aktualnosci.aktualnosci': ApiAktualnosciAktualnosci;
-      'api::aktualnosci-workts.aktualnosci-workts': ApiAktualnosciWorktsAktualnosciWorkts;
-      'api::aktualnosci-wracam-do-pracy.aktualnosci-wracam-do-pracy': ApiAktualnosciWracamDoPracyAktualnosciWracamDoPracy;
-      'api::do-pobrania.do-pobrania': ApiDoPobraniaDoPobrania;
-      'api::do-pobrania-wortks.do-pobrania-wortks': ApiDoPobraniaWortksDoPobraniaWortks;
-      'api::dokumenty.dokumenty': ApiDokumentyDokumenty;
-      'api::dokumenty-workts.dokumenty-workts': ApiDokumentyWorktsDokumentyWorkts;
-      'api::dokumenty-wracam-do-pracy.dokumenty-wracam-do-pracy': ApiDokumentyWracamDoPracyDokumentyWracamDoPracy;
     }
   }
 }
