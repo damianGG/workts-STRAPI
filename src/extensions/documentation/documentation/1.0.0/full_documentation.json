@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-10-11T09:13:02.156Z"
+    "x-generation-date": "2024-10-25T13:58:06.122Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -99,7 +99,7 @@
           },
           "data": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "opis": {},
           "podtytul": {
@@ -153,7 +153,7 @@
               },
               "data": {
                 "type": "string",
-                "format": "date"
+                "format": "date-time"
               },
               "opis": {},
               "podtytul": {
@@ -317,7 +317,7 @@
           },
           "data": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "opis": {},
           "podtytul": {

@@ -25,7 +25,7 @@
       }
     },
     "data": {
-      "type": "date",
+      "type": "datetime",
       "required": true,
       "pluginOptions": {
         "i18n": {

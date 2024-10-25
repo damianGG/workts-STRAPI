@@ -386,7 +386,7 @@ export interface ApiAktualnosciWorktsAktualnosciWorkts
           localized: true;
         };
       }>;
-    data: Attribute.Date &
+    data: Attribute.DateTime &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
